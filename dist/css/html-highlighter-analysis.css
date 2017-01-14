@@ -1,0 +1,83 @@
+.highlighter {
+  -o-tab-size: 0.5em;
+  -webkit-tab-size: 0.5em;
+  -moz-tab-size: 0.5em;
+  tab-size: 0.5em;
+  font-size: 1em;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  -moz-transition: all .2s;
+  transition: all .2s;
+}
+.highlighter li,
+.highlighter div,
+.highlighter span {
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  -moz-transition: all .2s;
+  transition: all .2s;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+.highlighter.highlighter-theme-light {
+  background-color: #efefef;
+  color: #111;
+}
+.highlighter.highlighter-theme-light ol.highlighter-ol > li:nth-child(odd) {
+  background-color: #f6f5f9;
+}
+.highlighter.highlighter-theme-light ol.highlighter-ol > li:nth-child(even) {
+  background-color: #ffffff;
+}
+.highlighter.highlighter-theme-light .html.punct {
+  color: #307091;
+}
+.highlighter.highlighter-theme-light .html.tag {
+  color: #49A9DA;
+}
+.highlighter.highlighter-theme-light .html.attr {
+  color: #F36B26;
+}
+.highlighter.highlighter-theme-light .html.value {
+  color: #A76BA6;
+}
+.highlighter.highlighter-theme-light .html.attr-eq {
+  color: #444;
+}
+.highlighter.highlighter-theme-light .html.attr-punct {
+  color: #539BC6;
+}
+.highlighter.highlighter-theme-light .html.comment {
+  color: #4AA54A;
+}
+.highlighter.highlighter-theme-dark {
+  background-color: #181818;
+  color: #ddd;
+}
+.highlighter.highlighter-theme-dark ol.highlighter-ol > li:nth-child(odd) {
+  background-color: #1e1e1e;
+}
+.highlighter.highlighter-theme-dark ol.highlighter-ol > li:nth-child(even) {
+  background-color: #202020;
+}
+.highlighter.highlighter-theme-dark .html.punct {
+  color: #999;
+}
+.highlighter.highlighter-theme-dark .html.tag {
+  color: #2DA3D9;
+}
+.highlighter.highlighter-theme-dark .html.attr {
+  color: #F07733;
+}
+.highlighter.highlighter-theme-dark .html.value {
+  color: #E7C537;
+}
+.highlighter.highlighter-theme-dark .html.attr-eq {
+  color: #5C6773;
+}
+.highlighter.highlighter-theme-dark .html.attr-punct {
+  color: #DD5599;
+}
+.highlighter.highlighter-theme-dark .html.comment {
+  color: #608B3A;
+}

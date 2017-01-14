@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../dev_temp/css/html-highlighter-analysis.css">
+    <title>html-highlighter</title>
+</head>
+<body>
+<style>
+    
+</style>
+<h3>html highlighter demo, code on <a href="https://github.com/lanbomo/html-highlighter">github</a>. Made by lanbomo</h3>
+<div>当前主题：<span id="currentTheme">dark</span></div>
+<div>
+    <button type="button" onclick="switchTheme('dark')">切换为dark</button>
+    <button type="button" onclick="switchTheme('light')">切换为light</button>
+</div>
+<div>
+    <pre id="codeContainer" class="highlighter highlighter-theme-dark"></pre>
+</div>
+<!--template-->
+<script type="text/html" id="htmlTemplate"><!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta  name=viewport content="width=device-width,in     
+        itial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <title>我是标题</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <br />
+        <div data-have id="app" 
+        data-id='dd'></div>
+        <img alt="./images/logo.png">
+        这里是一段小文字><
+        <div data-id="234"></div>
+        <button type="button" onclick="alert('><')">button</button>
+        <mu-time></mu-time>
+        his name was <strong><em>Baggins</em></strong>
+        <!-- built files will 
+        be auto injected <div>-->
+        <logic v:if="a > b">
+          a is bigger
+        <logic v:else>
+          b is bigger
+        <logic v:end>
+        <img src="data:image/png;base64,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" alt=二-维:码>
+        维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码维码
+        <script type="text/javascript" src="/app.js"><\/script>
+    </body/>
+</html></script>
+<!--End template-->
+<script src="../dev_temp/js/html-highlighter-analysis.js"></script>
+<script>
+    window.onload = function(){
+        codeContainer.innerHTML = highlighter.highlight(htmlTemplate.innerHTML.replace('<\\/script>','<\/script>'))
+    }
+    function switchTheme(theme){
+        console.log(theme,currentTheme.innerText)
+        var themeSwitch = theme === "dark" ? "light" : "dark"
+        if(currentTheme.innerText !== theme){
+            currentTheme.innerHTML = theme
+            codeContainer.className = codeContainer.className.replace(/(highlighter-theme-)\w+/,'$1'+theme)
+        }
+    }
+</script>
+</body>
+</html>

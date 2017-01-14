@@ -1,0 +1,49 @@
+.highlighter.highlighter-theme-light {
+  background-color: #fff;
+  color: #222;
+}
+.highlighter.highlighter-theme-light ol.highlighter-ol > li:nth-child(odd) {
+  background-color: #ebf5f5;
+}
+.highlighter.highlighter-theme-light ol.highlighter-ol > li:nth-child(even) {
+  background-color: #ffffe6;
+}
+.highlighter.highlighter-theme-light .html.doctype.start {
+  color: #AAA;
+}
+.highlighter.highlighter-theme-light .html.doctype.content {
+  color: #CC9999;
+}
+.highlighter.highlighter-theme-light .html.doctype.end {
+  color: #AAA;
+}
+.highlighter.highlighter-theme-light .html.tag.start {
+  color: #888;
+}
+.highlighter.highlighter-theme-light .html.tag.end {
+  color: #888;
+}
+.highlighter.highlighter-theme-light .html.tag.name {
+  color: #006699;
+}
+.highlighter.highlighter-theme-light .html.tag.brackets {
+  color: #888;
+}
+.highlighter.highlighter-theme-light .html.tag.attribute-name {
+  color: #006633;
+}
+.highlighter.highlighter-theme-light .html.tag.attribute-value {
+  color: #663300;
+}
+.highlighter.highlighter-theme-light .html.tag.attribute-value-quote {
+  color: #CC0066;
+}
+.highlighter.highlighter-theme-light .html.annotate.start {
+  color: #666699;
+}
+.highlighter.highlighter-theme-light .html.annotate.content {
+  color: #666633;
+}
+.highlighter.highlighter-theme-light .html.annotate.end {
+  color: #666699;
+}

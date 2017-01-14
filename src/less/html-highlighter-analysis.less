@@ -1,0 +1,125 @@
+//html
+//    punct < </ > /> <!, tag 标签名, attr 属性名, value 属性值, attr-eq =, attr-punct " ', comment <!-- -->, space 空白符
+
+.highlighter{
+  -o-tab-size: 0.5em;
+  -webkit-tab-size: 0.5em;
+  -moz-tab-size: 0.5em;
+  tab-size: 0.5em;
+  font-size: 1em;
+
+  transition: all .2s;
+  li,div,span{
+    transition: all .2s;
+    word-break:break-all;
+    white-space: pre-wrap;
+  }
+
+  //theme-light
+  &.highlighter-theme-light{
+    @not-html:#111;
+    @background:#efefef;
+
+    @ol-odd:lighten(#C3BED4,18%);
+    @ol-even:lighten(#C3BED4,22%);
+
+    @punct:#307091;
+    @tag:#49A9DA;
+    @attr:#F36B26;
+    @value:#A76BA6;
+    @attr-eq:#444;
+    @attr-punct:#539BC6;
+    @comment:#4AA54A;
+    
+    background-color:@background;
+    color:@not-html;
+      ol.highlighter-ol{
+        >li{
+          &:nth-child(odd){
+            background-color:@ol-odd;
+          }
+          &:nth-child(even){
+            background-color:@ol-even;
+          }
+        }
+      }
+      .html{
+        &.punct{
+          color: @punct;
+        }
+        &.tag{
+          color: @tag;
+        }
+        &.attr{
+          color: @attr;
+        }
+        &.value{
+          color: @value;
+        }
+        &.attr-eq{
+          color: @attr-eq;
+        }
+        &.attr-punct{
+          color: @attr-punct;
+        }
+        &.comment{
+          color: @comment;
+        }
+      }
+  }
+  //End theme-light
+
+  //theme-dark
+  &.highlighter-theme-dark{
+    @not-html:#ddd;
+    @background:#181818;
+
+    @ol-odd:lighten(#1B1B1B,1%);
+    @ol-even:lighten(#1B1B1B,2%);
+
+    @punct:#999;
+    @tag:#2DA3D9;
+    @attr:#F07733;
+    @value:#E7C537;
+    @attr-eq:#5C6773;
+    @attr-punct:#DD5599;
+    @comment:#608B3A;
+    
+    background-color:@background;
+    color:@not-html;
+      ol.highlighter-ol{
+        >li{
+          &:nth-child(odd){
+            background-color:@ol-odd;
+          }
+          &:nth-child(even){
+            background-color:@ol-even;
+          }
+        }
+      }
+      .html{
+        &.punct{
+          color: @punct;
+        }
+        &.tag{
+          color: @tag;
+        }
+        &.attr{
+          color: @attr;
+        }
+        &.value{
+          color: @value;
+        }
+        &.attr-eq{
+          color: @attr-eq;
+        }
+        &.attr-punct{
+          color: @attr-punct;
+        }
+        &.comment{
+          color: @comment;
+        }
+      }
+  }
+  //End theme-dark
+}

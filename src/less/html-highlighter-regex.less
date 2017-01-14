@@ -1,0 +1,95 @@
+//html
+//    doctype，文档类型左符号，文档类型内容，文档类型右符号
+//    doctype,start,content,end
+//    
+//    tag，标签左尖括号，标签右尖括号，标签名，标签内符号，标签内属性名，标签内属性值，标签内属性值引号
+//    tag,start,end,name,brackets,attribute-name,attribute-value,attribute-value-quote
+//    
+//    annotate，注释左符号，注释内容，注释右符号
+//    annotate,start,content,end
+
+@not-html:#222;
+@background:#fff;
+
+@ol-odd:lighten(#99CCCC,24%);
+@ol-even:lighten(#FFFFCC,5%);
+
+@doctype-start:#AAA;
+@doctype-content:#CC9999;
+@doctype-end:#AAA;
+
+@tag-start:#888;
+@tag-end:#888;
+@tag-name:#006699;
+@tag-brackets:#888;
+@tag-attribute-name:#006633;
+@tag-attribute-value:#663300;
+@tag-attribute-value-quote:#CC0066;
+
+@annotate-start:#666699;
+@annotate-content:#666633;
+@annotate-end:#666699;
+
+.highlighter{
+    &.highlighter-theme-light{
+      background-color:@background;
+      color:@not-html;
+        ol.highlighter-ol{
+          >li{
+            &:nth-child(odd){
+              background-color:@ol-odd;
+            }
+            &:nth-child(even){
+              background-color:@ol-even;
+            }
+          }
+        }
+        .html{
+          &.doctype{
+            &.start{
+              color:@doctype-start;
+            }
+            &.content{
+              color:@doctype-content;
+            }
+            &.end{
+              color:@doctype-end;
+            }
+          }
+          &.tag{
+            &.start{
+              color:@tag-start;
+            }
+            &.end{
+              color:@tag-end;
+            }
+            &.name{
+              color:@tag-name;
+            }
+            &.brackets{
+              color:@tag-brackets;
+            }
+            &.attribute-name{
+              color:@tag-attribute-name;
+            }
+            &.attribute-value{
+              color:@tag-attribute-value;
+            }
+            &.attribute-value-quote{
+              color:@tag-attribute-value-quote;
+            }
+          }
+          &.annotate{
+            &.start{
+              color:@annotate-start;
+            }
+            &.content{
+              color:@annotate-content;
+            }
+            &.end{
+              color:@annotate-end;
+            }
+          }
+        }
+    }
+}
