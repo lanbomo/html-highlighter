@@ -34,7 +34,7 @@
         },
         lexer: function (str) {
             // 1 doctype, 2 punct 符号, 3 word 单词, 4 literal 字面量, 5 space 空白符
-            let regexPat = /(&lt;!doctype)|(&lt;!--|--&gt;|&lt;\/?|\/?&gt;|=)|([\w][\w\-\:]*|[\u4E00-\u9FA5\-\:]+)|(&quot;[\s\S]*?&quot;|&#39;[\s\S]*?&#39;)|(\s+)/gi
+            let regexPat = /(&lt;!doctype)|(&lt;!--|--&gt;|&lt;\/?|\/?&gt;|=)|([\:\@\#]+|[\w][\w\-\:\@]*|[\u4E00-\u9FA5\-\:]+)|(&quot;[\s\S]*?&quot;|&#39;[\s\S]*?&#39;)|(\s+)/gi
             let tokens = []
             let token = function (type, value, index) {
                 // 省略非标签内容
@@ -161,6 +161,9 @@
                         preAST.push(para(token.index, token.value, "tag"))
                         tagName = token.value
                     } else if (tagOpen && preAST.slice(-1)[0].type === "space") {// 属性名
+                        preAST.push(para(token.index, token.value, "attr"))
+                    } else if (tagOpen && /^[\:\@]$/i.test(preAST.slice(-1)[0].value)) {// 属性名
+                        preAST.slice(-1)[0].type = "value"
                         preAST.push(para(token.index, token.value, "attr"))
                     } else if (tagOpen && preAST.slice(-1)[0].value === "=") {// 属性值
                         preAST.push(para(token.index, token.value, "value"))

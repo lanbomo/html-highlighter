@@ -36,7 +36,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         },
         lexer: function lexer(str) {
             // 1 doctype, 2 punct 符号, 3 word 单词, 4 literal 字面量, 5 space 空白符
-            var regexPat = /(&lt;!doctype)|(&lt;!--|--&gt;|&lt;\/?|\/?&gt;|=)|([\w][\w\-\:]*|[\u4E00-\u9FA5\-\:]+)|(&quot;[\s\S]*?&quot;|&#39;[\s\S]*?&#39;)|(\s+)/gi;
+            var regexPat = /(&lt;!doctype)|(&lt;!--|--&gt;|&lt;\/?|\/?&gt;|=)|([\:\@\#]+|[\w][\w\-\:\@]*|[\u4E00-\u9FA5\-\:]+)|(&quot;[\s\S]*?&quot;|&#39;[\s\S]*?&#39;)|(\s+)/gi;
             var tokens = [];
             var token = function token(type, value, index) {
                 // 省略非标签内容
@@ -167,6 +167,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                         tagName = token.value;
                     } else if (tagOpen && preAST.slice(-1)[0].type === "space") {
                         // 属性名
+                        preAST.push(para(token.index, token.value, "attr"));
+                    } else if (tagOpen && /^[\:\@]$/i.test(preAST.slice(-1)[0].value)) {
+                        // 属性名
+                        preAST.slice(-1)[0].type = "value";
                         preAST.push(para(token.index, token.value, "attr"));
                     } else if (tagOpen && preAST.slice(-1)[0].value === "=") {
                         // 属性值
